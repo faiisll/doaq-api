@@ -53,7 +53,8 @@ module.exports = {
             category_id: req.body.category_id,
             title: req.body.title,
             prev: req.body.prev || null,
-            next: req.body.next || null
+            next: req.body.next || null,
+            source: req.body.source || ""
         })
 
         // console.log(cat.dataValues);
@@ -92,7 +93,8 @@ module.exports = {
                 category_id: req.body.category_id || doa.category_id,
                 title: req.body.title || doa.title,
                 prev: req.body.prev || doa.prev,
-                next: req.body.next || doa.next
+                next: req.body.next || doa.next,
+                source: req.body.source || doa.source
             });
 
             await doa.save();

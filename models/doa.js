@@ -26,7 +26,8 @@ module.exports = (sequelize, DataTypes) => {
     category_id: DataTypes.INTEGER,
     title: DataTypes.STRING,
     prev: DataTypes.INTEGER,
-    next: DataTypes.INTEGER
+    next: DataTypes.INTEGER,
+    source: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Doa',
