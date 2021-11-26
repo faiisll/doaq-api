@@ -14,10 +14,10 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "faisal",
-    "password": "sukalupa",
-    "database": "db_doaq",
-    "host": "127.0.0.1",
+    "username": "ppjlsszddjwcan",
+    "password": "044a6438bea6561ca8efa8370b40e1f573cb6f5cd44be6e3047cbaa3de6c0cac",
+    "database": "d4gkqutibi0dvj",
+    "host": "ec2-54-152-185-191.compute-1.amazonaws.com",
     "dialect": "postgres"
   }
 }
