@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "faisal",
+    "password": "sukalupa",
+    "database": "db_doaq",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "faisal",
+    "password": "sukalupa",
+    "database": "db_doaq",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "faisal",
+    "password": "sukalupa",
+    "database": "db_doaq",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
