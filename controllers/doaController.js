@@ -3,6 +3,7 @@ const Category = require("../models").Category;
 const Doa = require("../models").Doa;
 const Detail = require("../models").Detail;
 const Op = db.Sequelize.Op;
+const getPage = require('../helper/getPage');
 
 module.exports = {
     async verifyCategory(req,res, next){
@@ -38,6 +39,27 @@ module.exports = {
             message: "Success",
             data: doa
         })).catch(err => res.status(400).send(err));
+    },
+
+    async getPage(req, res) {
+        const {page, size} = req.query;
+        try{
+            const {limit, offset} = getPage(page, size);
+            const doa = await Doa.findAndCountAll({
+                limit,
+                offset
+            });
+
+            const current = page ? page : 0;
+            const totalPages = Math.ceil(doa.count / limit);
+
+            return res.status(200).send({current, totalPages, ...doa});
+
+        }catch(err){
+            // console.log(err);
+            return res.status(400).send(err);
+
+        }
     },
 
     findById(req, res) {

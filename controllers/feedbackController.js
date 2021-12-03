@@ -1,6 +1,7 @@
 const db = require('../models/index');
 const Feedback = require('../models').Feedback;
 const Op = db.Sequelize.Op;
+const getPage = require('../helper/getPage');
 
 module.exports = {
     getAll(req, res) {
@@ -17,6 +18,27 @@ module.exports = {
             }
             return res.status(200).send({data: feed});
         }).catch(err => res.status(400).send(err))
+    },
+
+    async getPage(req, res){
+        const {page, size} = req.query;
+        try{
+            const {limit, offset} = getPage(page, size);
+            const feed = await Feedback.findAndCountAll({
+                limit,
+                offset
+            });
+
+            const current = page ? page : 0;
+            const totalPages = Math.ceil(feed.count / limit);
+
+            return res.status(200).send({current, totalPages, ...feed});
+
+        }catch(err){
+            // console.log(err);
+            return res.status(400).send(err);
+
+        }
     },
 
     add(req, res) {

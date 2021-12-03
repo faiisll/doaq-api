@@ -38,6 +38,9 @@ router.post('/detail', [detailController.verifyDoaId], detailController.add);
 router.put('/detail/:id', [detailController.verifyDetail, detailController.verifyDoaId], detailController.update);
 router.delete('/detail/:id', [detailController.verifyDetail], detailController.delete);
 
+//page
+router.get('/page/doa', doaController.getPage);
+router.get('/page/feedback', feedbackController.getPage);
 
 
 module.exports = router;
