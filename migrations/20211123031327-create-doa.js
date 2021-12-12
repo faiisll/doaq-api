@@ -20,6 +20,10 @@ module.exports = {
         allowNull: true,
         type: Sequelize.STRING
       },
+      mazhab_id: {
+        allowNull: true,
+        type: Sequelize.INTEGER
+      },
       prev: {
         type: Sequelize.INTEGER
       },

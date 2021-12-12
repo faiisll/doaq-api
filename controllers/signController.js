@@ -46,7 +46,7 @@ module.exports = {
         email: req.body.email,
       },
     })
-      .then((user) => {
+    .then((user) => {
         if (!user) {
           return res.status(404).send({
             auth: false,
@@ -82,6 +82,7 @@ module.exports = {
         });
       })
       .catch((err) => {
+        // console.log(err);
         res.status(500).send({
           auth: false,
           id: req.body.id,
